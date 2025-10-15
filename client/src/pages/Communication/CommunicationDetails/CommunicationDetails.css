@@ -1,0 +1,148 @@
+/* Main page layout */
+.comm-page {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #0d47a1, #1976d2, #42a5f5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 20px 15px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  border-radius: 0 20px 20px 0;
+  transition: all 0.3s ease;
+}
+
+/* Logo section */
+.logo-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+
+
+.logo-section span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Menu section */
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-btn {
+  color: white !important;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  color: #fff !important;
+}
+
+/* Logout section */
+.logout-section {
+  text-align: center;
+}
+
+.logout-btn {
+  width: 90%;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Content area */
+.content {
+  margin-left: 250px;
+  padding: 40px;
+  background-color: #f0f2f5;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.content-inner {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.menu-btn {
+  color: white !important;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.menu-btn svg {
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+/* Active menu button highlight */
+.menu-btn.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+  color: #fff !important;
+  font-weight: bold;
+}
+.menu-btn {
+  color: white !important;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none !important;  /* remove underline */
+}
+
+.menu-btn.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+  color: #fff !important;
+  font-weight: bold;
+  text-decoration: none !important;  /* remove underline */
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  color: #fff !important;
+  text-decoration: none !important;  /* remove underline on hover */
+}

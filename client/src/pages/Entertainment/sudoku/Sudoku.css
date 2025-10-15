@@ -1,0 +1,84 @@
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #001f3f, #0074d9, #7fdbff);
+  color: white;
+  height: 100vh;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.sudoku-board {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.sudoku-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #0074d9;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #001f3f;
+  background: #e8f6ff;
+  outline: none;
+}
+
+.sudoku-cell:disabled {
+  background: #0074d9;
+  color: white;
+  font-weight: bold;
+}
+
+.sudoku-cell:focus {
+  background: #aee1ff;
+}
+
+.reset-btn {
+  margin-top: 20px;
+  background: white;
+  color: #0074d9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background: #0074d9;
+  color: white;
+}
+
+.game-over {
+  margin-top: 15px;
+  color: #ff4d4d;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}

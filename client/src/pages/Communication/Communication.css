@@ -1,0 +1,91 @@
+/* Flip Card Container */
+.flip-card {
+  width: 260px; /* Reduced width */
+  height: 320px; /* Reduced height */
+  perspective: 1000px;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.flip-card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Inner Rotation Area */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Common Styles */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/* Card Front */
+.flip-card-front {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Card Back */
+.flip-card-back {
+  background-color: #f8f9fa;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Text Size Tweaks */
+.flip-card-front h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.flip-card-front p {
+  font-size: 1rem;
+}
+
+.flip-card-back p {
+  font-size: 0.95rem;
+}
+
+/* Button */
+.flip-card-back button {
+  width: 120px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 220px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .flip-card {
+    width: 100%;
+    height: 250px;
+  }
+}

@@ -1,0 +1,47 @@
+/* Page background */
+/* .Entertainment-container {
+  min-height: 100vh;
+  background: #0c006b;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 0, 107, 1) 0%,
+    rgba(9, 9, 121, 1) 25%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white; 
+} */
+
+/* Game card */
+.game-card {
+  width: 180px;
+  margin: 10px auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight transparent card */
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.card-img-top {
+  height: 120px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 5px;
+}
+
+.card-title {
+  font-size: 14px;
+  margin: 0;
+  color: white; /* Title text white */
+}
+
+h2 {
+  color: white; /* Page heading white */
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}

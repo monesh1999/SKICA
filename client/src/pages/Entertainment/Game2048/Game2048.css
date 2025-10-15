@@ -1,0 +1,36 @@
+.grid {
+  display: inline-block;
+  background: #bbada0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  background: #cdc1b4;
+  font-weight: bold;
+  font-size: 24px;
+  color: #776e65;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.value-2 { background: #eee4da; }
+.value-4 { background: #ede0c8; }
+.value-8 { background: #f2b179; color: #fff; }
+.value-16 { background: #f59563; color: #fff; }
+.value-32 { background: #f67c5f; color: #fff; }
+.value-64 { background: #f65e3b; color: #fff; }
+.value-128 { background: #edcf72; color: #fff; }
+.value-256 { background: #edcc61; color: #fff; }
+.value-512 { background: #edc850; color: #fff; }
+.value-1024 { background: #edc53f; color: #fff; }
+.value-2048 { background: #edc22e; color: #fff; }
