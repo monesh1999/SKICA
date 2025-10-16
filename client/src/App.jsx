@@ -20,6 +20,9 @@ import Game2048 from "./pages/Entertainment/Game2048/Game2048";
 import Entertainment from "./pages/Entertainment/Entertainment";
 import Communication from "./pages/Communication/Communication";
 import CommunicationDetails from "./pages/Communication/CommunicationDetails/CommunicationDetails"
+import SoftSkillViewer from "./pages/Communication/Softskill/SoftSkillViewer";
+import SoftSkillViewers from "./pages/Communication/Softskill/SoftSkillViewers";
+import SoftSkillDetail from "./pages/communication/SoftSkill/SoftSkillDetail";
 
 const App = () => {
   return (
@@ -31,8 +34,9 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/email-verify" element={<EmailVerify />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        
-        
+        <Route path="/ss" element={<SoftSkillViewer />} />
+        <Route path="/sss" element={<SoftSkillViewers />} />
+        <Route path="/softskill/:id" element={<SoftSkillDetail />} />
        
         
 
