@@ -82,16 +82,16 @@
 /* Content area */
 .content {
   margin-left: 250px;
-  padding: 40px;
-  background-color: #f0f2f5;
+  padding: 20px;
+  
   width: 100%;
   overflow-y: auto;
 }
 
 .content-inner {
-  background: white;
+ background: linear-gradient(135deg, #001f3f, #004080, #0073e6);
   border-radius: 15px;
-  padding: 25px;
+  padding: 5px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 .menu-btn {

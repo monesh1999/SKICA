@@ -1,8 +1,13 @@
+/* Main Page */
 .softskill-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: #f9f9f9;
+  min-height: 100%; /* allow page to grow */
+  background-image: url('../../../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* keeps background fixed while scrolling */
 }
 
 /* Header */
@@ -13,6 +18,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
+ 
+  position: sticky; /* makes header stick to top */
+  top: 0;           /* top edge */
+  z-index: 100;     /* above other content */
 }
 
 /* Body */
@@ -20,12 +29,13 @@
   flex: 1;
   display: flex;
   overflow: hidden;
+  color: white; /* prevents body from overflowing */
 }
 
 /* Sidebar */
 .softskill-sidebar {
   width: 25%;
-  background: #e3f2fd;
+  background-color: rgba(227, 242, 253, 0.85); /* semi-transparent only */
   padding: 20px;
   overflow-y: auto;
   border-right: 2px solid #90caf9;
@@ -64,6 +74,7 @@
   width: 75%;
   padding: 30px;
   overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent only */
 }
 
 .content-title {
@@ -102,3 +113,5 @@
   padding: 8px 0;
   font-size: 0.9rem;
 }
+
+

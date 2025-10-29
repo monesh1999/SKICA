@@ -4,6 +4,10 @@ import { Button } from "react-bootstrap";
 import logo from "../../../assets/logo.jpg";
 import { FaMicrophone, FaBookOpen, FaPenFancy, FaBook } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SpeakingPage from "./SpeakingPage";
+import ListeningPage from "./ListeningPage";
+import ReadingView from "./ReadingView";
+import WritingView from "./WritingView";
 
 const CommunicationDetails = () => {
   // State to track which menu item is active
@@ -13,13 +17,13 @@ const CommunicationDetails = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "Speak":
-        return <div><h3>Speak</h3><p>Here you can practice speaking exercises.</p></div>;
+        return <SpeakingPage/>;
       case "Learning":
-        return <div><h3>Learning</h3><p>Here you can access learning materials.</p></div>;
+        return <ListeningPage/>;
       case "Writing":
-        return <div><h3>Writing</h3><p>Here you can practice writing activities.</p></div>;
+        return <WritingView/>;
       case "Reading":
-        return <div><h3>Reading</h3><p>Here you can read articles and exercises.</p></div>;
+        return <ReadingView />;
       default:
         return <div><h3>Welcome</h3><p>Select an option from the sidebar to start.</p></div>;
     }
@@ -38,10 +42,10 @@ const CommunicationDetails = () => {
                 className="rounded-pill"
                 src={logo}
                 alt="logo"
-                width={80}
-                height={75}
+                width={190}
+                height={100}
               />
-              <span className="fw-bold fs-1 ms-2 text-light">SKICA</span>
+              <span className="fw-bold fs-1 ms-2 text-light"></span>
             </Link>
         </div>
 

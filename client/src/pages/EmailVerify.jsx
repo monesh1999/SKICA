@@ -86,8 +86,8 @@ const EmailVerify = () => {
             textDecoration: "none",
           }}
       >
-         <img  src={assets.logo} alt="logo" width={80} height={75} />
-        <span className="fs-1 fw-semibold text-light">SKICA</span>
+         <img  src={assets.logo} alt="logo" width={180} height={100} />
+        <span className="fs-1 fw-semibold text-light"></span>
       </Link>
 
       <div className="p-5 rounded-4 shadow bg-white" style={{width:"400px"}}>

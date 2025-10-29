@@ -48,10 +48,16 @@ public class SecurityConfig {
             .cors(Customizer.withDefaults())
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/login", "/register", "/send-reset-otp", "/reset-password", "/logout", "/quiz/**")
+                .requestMatchers("/login", "/register", "/send-reset-otp", "/reset-password", "/logout", "/quiz/**","/uploads/**",   // public static files
+            	        "/reading/list/**")
                 .permitAll() // public endpoints
-                .anyRequest().authenticated() // everything else requires JWT
-            )
+            	    .requestMatchers(
+            	        "/reading/upload",
+            	        "/reading/delete/**"
+            	    ).authenticated()            // upload/delete requires login
+            	    .anyRequest().authenticated()
+            	)
+
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .logout(AbstractHttpConfigurer::disable)
             .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)

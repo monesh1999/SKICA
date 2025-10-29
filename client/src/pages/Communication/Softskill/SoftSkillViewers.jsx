@@ -6,6 +6,7 @@ import { AppContext } from "../../../context/AppContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../../../assets/logo.jpg";
+import bgImage from "../../../assets/background.jpg";
 import "./SoftSkillViewers.css";
 
 const SoftSkillViewer = () => {
@@ -60,12 +61,21 @@ const SoftSkillViewer = () => {
     );
 
   return (
-    <div className="softskill-page">
+    <div
+      className="softskill-page d-flex flex-column"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+      }}
+    >
       {/* HEADER */}
-      <div className="softskill-header d-flex justify-content-between align-items-center p-2" style={{ background: "#2575fc", color: "#fff" }}>
+      <div className="softskill-header d-flex justify-content-between align-items-center p-0" style={{ background: "#2575fc", color: "#fff" }}>
         <div className="d-flex align-items-center">
-          <img src={logo} alt="logo" width={70} height={65} className="rounded-pill" />
-          <span className="fw-bold fs-3 ms-2">SKICA</span>
+          <img src={logo} alt="logo" width={190} height={100}  />
+          <span className="fw-bold fs-3 ms-2"></span>
         </div>
         <div>
           <Button variant="outline-light" className="me-2" onClick={() => navigate(-1)}>← Back</Button>
@@ -74,16 +84,19 @@ const SoftSkillViewer = () => {
       </div>
 
       {/* BODY */}
-      <div className="d-flex">
+      <div className="d-flex flex-grow-1 text-white" style={{ overflowY: "auto" }}>
         {/* SIDEBAR */}
-        <div className="p-3" style={{ width: "250px", background: "#f0f0f0", minHeight: "100vh" }}>
-          <h5>Soft Skills</h5>
+        <div className="p-3" style={{ flex: "0 0 20%" }}>
+          <h5 className="mb-3">Soft Skills</h5>
           <ul className="list-unstyled">
             {skills.map((s) => (
               <li
                 key={s.id}
                 className={`p-2 mb-2 ${selectedSkill === s.id ? "bg-primary text-white" : ""}`}
-                style={{ cursor: "pointer" }}
+                style={{
+                  cursor: "pointer",
+                  borderBottom: "1px solid #ccc",
+                }}
                 onClick={() => handleSkillClick(s.id)}
               >
                 {s.name}
@@ -93,7 +106,8 @@ const SoftSkillViewer = () => {
         </div>
 
         {/* CONTENT */}
-        <div className="flex-grow-1 p-3" style={{ background: "#fff" }}>
+        <div className="flex-grow-1 p-3" >
+          <div className=" text-white">
           <h1 className="text-center mb-4">Comprehensive Guide to Soft Skills</h1>
 
           <p>Learn all about soft skills in this comprehensive guide. Discover how developing these interpersonal attributes can enhance your professional success.</p>
@@ -122,31 +136,58 @@ const SoftSkillViewer = () => {
             <li>Highlight soft skills in the skills section.</li>
             <li>Include certifications or awards for additional evidence.</li>
           </ol>
-
+</div>
           {/* Video Cards */}
           {skills.length > 0 ? (
-            <div className="d-flex flex-wrap gap-3 mt-4">
-              {skills.map((skill) => (
-                <Card
-                  key={skill.id}
-                  ref={(el) => (cardRefs.current[skill.id] = el)}
-                  className={`shadow-sm ${selectedSkill === skill.id ? "border border-primary" : ""}`}
-                  onClick={() => handleSkillClick(skill.id, true)}
-                  style={{ width: "300px", cursor: "pointer" }}
-                >
-                  {skill.videoUrl && <video src={skill.videoUrl} controls className="w-100" />}
-                  <Card.Body>
-                    <Card.Title>{skill.name}</Card.Title>
-                    <Card.Text className="text-muted">{skill.description || "No description."}</Card.Text>
-                    {skill.usedIt && <Badge bg="info" className="me-1">Used: {skill.usedIt}</Badge>}
-                    {skill.idioms && <Badge bg="warning" text="dark">Idiom</Badge>}
-                  </Card.Body>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="text-muted text-center mt-5">No soft skills available.</div>
+  <div className="row mt-4">
+    {skills.map((skill) => (
+      <div key={skill.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <Card
+          ref={(el) => (cardRefs.current[skill.id] = el)}
+          className={`shadow-sm ${
+            selectedSkill === skill.id ? "border border-primary" : ""
+          }`}
+          onClick={() => handleSkillClick(skill.id, true)}
+          style={{ cursor: "pointer", height: "100%" }}
+        >
+          {skill.videoUrl && (
+            <video
+              src={skill.videoUrl}
+              controls
+              className="w-100"
+              style={{ height: "170px", objectFit: "cover" }}
+            />
           )}
+          <Card.Body>
+            <Card.Title>{skill.name}</Card.Title>
+            <Card.Text
+              className="text-muted text-truncate-multiline"
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {skill.description || "No description."}
+            </Card.Text>
+            {skill.idioms && (
+              <Badge bg="warning" text="dark">
+                for more
+              </Badge>
+            )}
+          </Card.Body>
+        </Card>
+      </div>
+    ))}
+  </div>
+) : (
+  <div className="text-muted text-center mt-5">
+    No soft skills available.
+  </div>
+)}
+
         </div>
       </div>
 

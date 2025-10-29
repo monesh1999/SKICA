@@ -23,6 +23,12 @@ import CommunicationDetails from "./pages/Communication/CommunicationDetails/Com
 import SoftSkillViewer from "./pages/Communication/Softskill/SoftSkillViewer";
 import SoftSkillViewers from "./pages/Communication/Softskill/SoftSkillViewers";
 import SoftSkillDetail from "./pages/communication/SoftSkill/SoftSkillDetail";
+import SpeakingPage from "./pages/Communication/CommunicationDetails/SpeakingPage";
+import ListeningPage from "./pages/Communication/CommunicationDetails/ListeningPage";
+import ReadingCrud from "./pages/Communication/CommunicationDetails/ReadingCrud";
+import ReadingView from "./pages/Communication/CommunicationDetails/ReadingView";
+
+
 
 const App = () => {
   return (
@@ -34,9 +40,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/email-verify" element={<EmailVerify />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/ss" element={<SoftSkillViewer />} />
-        <Route path="/sss" element={<SoftSkillViewers />} />
-        <Route path="/softskill/:id" element={<SoftSkillDetail />} />
+
+        
+        
+       
        
         
 
@@ -57,6 +64,14 @@ const App = () => {
         <Route path="/game2048" element={<Game2048 />} />
         <Route path="/Communication" element={<Communication />} />
         <Route path="/CommunicationDetails" element={<CommunicationDetails />} />
+        <Route path="/softskills-details" element={<SoftSkillViewers />} />
+        <Route path="/softskill/:id" element={<SoftSkillDetail />} />
+        <Route path="/speakingPage" element={<SpeakingPage />} />
+       <Route path="/ListeningPage" element={<ListeningPage />} />
+       <Route path="/Readingview" element={<ReadingView />} />
+
+        <Route path="admin/reading" element={<ReadingCrud token={localStorage.getItem("token")} />} />
+       <Route path="admin/softskill" element={<SoftSkillViewer />} />
         </Route>
       </Routes>
     </div>

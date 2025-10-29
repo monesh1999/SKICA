@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.listening-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #001f3f, #004080, #0073e6, #00aaff);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.listening-header {
+  padding: 60px 20px 30px;
+}
+
+.listening-header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+  color: #ffd700; /* gold accent */
+}
+
+.listening-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #d6e6ff;
+}
+
+/* Glass section */
+.glass {
+  
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 35px;
+  margin: 40px auto;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Section title with gold accent */
+.section h2 {
+  color: #ffd700;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Grid */
+.grid1 {
+   
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  color: #1f2eff; /* gold accent */
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #000000;
+  margin: 10px 0;
+}
+
+.card-content .rating {
+  font-weight: 500;
+  color: #ffd700; /* gold stars */
+}
+
+/* Footer */
+.listening-footer {
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #cfdfff;
+  background: transparent;
+}
+
+.listening-footer span {
+  color: #ffd700;
+  font-weight: 600;
+}

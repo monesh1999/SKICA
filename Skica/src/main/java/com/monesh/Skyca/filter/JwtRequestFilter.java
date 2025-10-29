@@ -31,7 +31,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 	    this.jwtUtil = jwtUtil;
 	}
 	
-	public static final List<String> PUBLIC_URLS = List.of("/login", "/register", "/send-reset-otp", "/reset-password", "/logout");
+	public static final List<String> PUBLIC_URLS = List.of("/login", "/register", "/send-reset-otp", "/reset-password", "/logout","/uploads/");
 
 
 	@Override

@@ -87,8 +87,8 @@ const Login = () => {
             textDecoration: "none",
           }}
         >
-           <img className='rounded-pill' src={assets.logo} alt="logo" width={80} height={75} />
-          <span className="fw-bold fs-1 text-light ms-2">SKICA</span>
+           <img className='rounded-pill' src={assets.logo} alt="logo" width={180} height={100} />
+          <span className="fw-bold fs-1 text-light ms-2"></span>
         </Link>
       </div>
 

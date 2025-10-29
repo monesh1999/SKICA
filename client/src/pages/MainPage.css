@@ -1,5 +1,8 @@
-/* Container scope */
-.mainpage-container .sidebar-gradient {
+/* ====== MainPage Layout Base ====== */
+.mainpage-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
   background: linear-gradient(
     180deg,
     rgba(12, 0, 107, 1) 0%,
@@ -7,52 +10,151 @@
     rgba(0, 212, 255, 1) 100%
   );
   color: white;
+  overflow-x: hidden;
 }
 
-/* Sidebar buttons */
-.mainpage-container .list-group-item {
-  background: transparent !important;
+/* ====== Sidebar ====== */
+.sidebarm {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 0, 107, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  z-index: 1030;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-heading {
+  background: linear-gradient(90deg, #0c006b, #090979, #00d4ff);
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ====== Sidebar Links ====== */
+.list-group-item {
+  background-color: transparent !important;
   color: white !important;
   border: none !important;
-  transition: all 0.3s;
+  font-size: 1.1rem;
+  padding: 15px 20px !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.mainpage-container .list-group-item:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
+.list-group-item:hover,
+.list-group-item:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
   color: #ffd700 !important;
 }
 
-/* Sidebar heading */
-.mainpage-container .sidebar-heading {
-  background: linear-gradient(90deg, #0c006b, #090979, #00d4ff);
-  color: white;
+/* Sidebar icons */
+.list-group-item i {
+  font-size: 1.25rem;
+  width: 25px;
 }
 
-/* Main content background */
-.mainpage-container .main-content {
+/* Sidebar Buttons */
+.sidebarm .btn {
+  background: linear-gradient(to right, #ff725c ,#ff0202);
+  color: white;
+  border: none;
+  font-size: 1.05rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebarm .btn:hover {
+  background: linear-gradient(to right, #ff0000, #ff0000);
+}
+
+/* ====== Main Content ====== */
+.main-content {
+  flex: 1;
+  min-height: 100vh;
   background: linear-gradient(120deg, #0c006b, #090979, #00d4ff);
   color: white;
-  min-height: 100vh;
-  border-radius: 15px;
-  width: 100%;
+  padding: 20px;
+  border-radius: 15px 0 0 15px;
+  overflow-y: auto;
 }
 
-/* Toggle button */
-.mainpage-container .btn-primary {
-  background: linear-gradient(to right, #0c006b, #00d4ff);
-  border: none;
+/* Section Cards inside main content */
+.main-content section {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  margin-bottom: 30px;
 }
 
-/* Active content heading */
-.mainpage-container .active-heading {
+.main-content section h2 {
   color: #ffd700;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .mainpage-container .main-content {
+/* Highlight headings */
+.active-heading {
+  color: #ffd700;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* ====== Responsive Adjustments ====== */
+
+/* Desktop (lg and up) */
+@media (min-width: 992px) {
+  .sidebarm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    transform: translateX(0) !important;
+  }
+
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+  }
+
+  .d-lg-none {
+    display: none !important;
+  }
+}
+
+/* Mobile (below lg) */
+@media (max-width: 991.98px) {
+  .sidebarm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+
+  .sidebarm.d-none {
+    transform: translateX(-100%);
+  }
+
+  .mainpage-container > .sidebarm:not(.d-none) {
+    transform: translateX(0);
+  }
+
+  .main-content {
     margin-left: 0;
+    width: 100%;
     border-radius: 0;
   }
+}
+
+/* Prevent scroll when sidebar open */
+.mainpage-container.sidebar-open {
+  overflow: hidden;
 }

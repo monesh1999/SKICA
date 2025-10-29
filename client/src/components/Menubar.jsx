@@ -57,13 +57,13 @@ const Menubar = () => {
 
   return (
     <nav
-      className="navbar bg-white px-5 py-3 d-flex justify-content-between align-items-center shadow-sm"
+      className="navbar bg-white px-5 py-0 d-flex justify-content-between align-items-center shadow-sm"
       style={{ position: "sticky", top: 0, zIndex: 1000 }}
     >
       {/* Left Side - Logo */}
       <div className="d-flex align-items-center gap-2">
-        <img src={assets.logo} alt="logo" width={70} height={70} />
-        <span className="fw-bold fs-1 text-primary">SKICA</span>
+        <img src={assets.logo} alt="logo" width={190} height={100} />
+        <span className="fw-bold fs-1 text-primary"></span>
       </div>
 
       {/* Center: (kept empty to keep layout centered) */}
