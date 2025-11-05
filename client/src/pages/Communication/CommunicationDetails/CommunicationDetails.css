@@ -1,12 +1,12 @@
-/* Main page layout */
-.comm-page {
+/* Scope ALL communication page styles */
+.comm-wrapper .comm-page1 {
   display: flex;
   height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Sidebar styling */
-.sidebar {
+/* Sidebar */
+.comm-wrapper .sidebar1 {
   width: 250px;
   background: linear-gradient(180deg, #0d47a1, #1976d2, #42a5f5);
   color: white;
@@ -23,30 +23,27 @@
   transition: all 0.3s ease;
 }
 
-/* Logo section */
-.logo-section {
+/* Logo */
+.comm-wrapper .logo-section {
   text-align: center;
   margin-bottom: 40px;
 }
 
-
-
-
-.logo-section span {
+.comm-wrapper .logo-section span {
   display: block;
   margin-top: 10px;
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
 
-/* Menu section */
-.menu-section {
+/* Menu */
+.comm-wrapper .menu-section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.menu-btn {
+.comm-wrapper .menu-btn {
   color: white !important;
   font-size: 1.2rem;
   width: 100%;
@@ -54,95 +51,57 @@
   padding: 12px 20px;
   margin: 8px 0;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
   transition: all 0.3s ease;
+  text-decoration: none !important;
+  border: none !important; /* override bootstrap */
+  background: transparent !important;
 }
 
-.menu-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.comm-wrapper .menu-btn:hover {
+  background-color: rgba(255,255,255,0.2);
   transform: translateX(5px);
-  color: #fff !important;
 }
 
-/* Logout section */
-.logout-section {
+/* Active tab */
+.comm-wrapper .menu-btn.active {
+  background-color: rgba(255,255,255,0.3);
+  transform: translateX(5px);
+  font-weight: bold;
+}
+
+.comm-wrapper .menu-btn svg {
+  font-size: 1.3rem;
+}
+
+/* Logout */
+.comm-wrapper .logout-section {
   text-align: center;
 }
 
-.logout-btn {
+.comm-wrapper .logout-btn {
   width: 90%;
   font-weight: bold;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
-.logout-btn:hover {
+.comm-wrapper .logout-btn:hover {
   transform: scale(1.05);
 }
 
-/* Content area */
-.content {
+/* Content */
+.comm-wrapper .content {
   margin-left: 250px;
   padding: 20px;
-  
   width: 100%;
   overflow-y: auto;
 }
 
-.content-inner {
- background: linear-gradient(135deg, #001f3f, #004080, #0073e6);
+.comm-wrapper .content-inner {
+  background: linear-gradient(135deg, #001f3f, #004080, #0073e6);
   border-radius: 15px;
   padding: 5px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-.menu-btn {
-  color: white !important;
-  font-size: 1.2rem;
-  width: 100%;
-  text-align: left;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.menu-btn svg {
-  font-size: 1.3rem;
-  vertical-align: middle;
-}
-/* Active menu button highlight */
-.menu-btn.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateX(5px);
-  color: #fff !important;
-  font-weight: bold;
-}
-.menu-btn {
-  color: white !important;
-  font-size: 1.2rem;
-  width: 100%;
-  text-align: left;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  text-decoration: none !important;  /* remove underline */
-}
-
-.menu-btn.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateX(5px);
-  color: #fff !important;
-  font-weight: bold;
-  text-decoration: none !important;  /* remove underline */
-}
-
-.menu-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateX(5px);
-  color: #fff !important;
-  text-decoration: none !important;  /* remove underline on hover */
 }

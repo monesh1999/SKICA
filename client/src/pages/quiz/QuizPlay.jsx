@@ -16,6 +16,17 @@ const QuizPlay = () => {
   const [loading, setLoading] = useState(true);
   const [timer, setTimer] = useState(30);
 
+  // ✅ Block URL tampering
+  useEffect(() => {
+    const savedCategory = localStorage.getItem("quizCategory");
+    const savedSubTopic = localStorage.getItem("quizSubTopic");
+
+    if (!savedCategory || !savedSubTopic ||
+        savedCategory !== category || savedSubTopic !== subTopic) {
+      navigate("/quiz/select");
+    }
+  }, [category, subTopic, navigate]);
+
   useEffect(() => {
     const getQuiz = async () => {
       setLoading(true);
@@ -29,10 +40,11 @@ const QuizPlay = () => {
   useEffect(() => {
     if (!loading && quiz.length > 0) {
       setTimer(30);
+
       const countdown = setInterval(() => {
         setTimer(prev => {
           if (prev === 1) {
-            handleAnswer(null); // skip question if time out
+            handleAnswer(null);
             return 30;
           }
           return prev - 1;
@@ -45,16 +57,20 @@ const QuizPlay = () => {
 
   const handleAnswer = (option) => {
     const currentQuestion = quiz[index];
-    setUserAnswers([...userAnswers, { selected: option, correct: currentQuestion.answer }]);
+    const updatedAnswers = [...userAnswers, { selected: option, correct: currentQuestion.answer }];
+    setUserAnswers(updatedAnswers);
 
     if (index + 1 < quiz.length) {
       setIndex(index + 1);
     } else {
-      navigate("/quiz/result", { state: { quiz, userAnswers: [...userAnswers, { selected: option, correct: currentQuestion.answer }] } });
+      localStorage.removeItem("quizCategory");
+      localStorage.removeItem("quizSubTopic");
+
+      navigate("/quiz/result", { state: { quiz, userAnswers: updatedAnswers } });
     }
   };
 
-  if (loading) return <h3 className="text-center mt-5">Loading quiz...</h3>;
+  if (loading) return <h3 className="text-center text-white mt-5">Loading quiz...</h3>;
   if (quiz.length === 0) return <h3 className="text-center mt-5">No quiz available.</h3>;
 
   const q = quiz[index];
@@ -62,7 +78,7 @@ const QuizPlay = () => {
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h4>Question {index + 1} of {quiz.length}</h4>
+        <h4 className="text-white">Question {index + 1} of {quiz.length}</h4>
         <div className="timer">{timer}s</div>
       </div>
 

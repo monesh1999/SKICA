@@ -124,7 +124,7 @@ const MainPage = () => {
               <div className="container my-5 ">
                   {/* ... Existing Welcome Content ... */}
                   <header className="text-center mb-5">
-                      <h1 className="display-4">Welcome to Skica</h1>
+                      <h1 className="display-4">Welcome to SKICA</h1>
                       <p className="lead">
                           Skica is an interactive platform designed to enhance your communication skills, soft skills & attitude, aptitude, and entertainment abilities. Explore, learn, and grow with engaging exercises, puzzles, and tests.
                       </p>

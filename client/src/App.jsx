@@ -27,7 +27,7 @@ import SpeakingPage from "./pages/Communication/CommunicationDetails/SpeakingPag
 import ListeningPage from "./pages/Communication/CommunicationDetails/ListeningPage";
 import ReadingCrud from "./pages/Communication/CommunicationDetails/ReadingCrud";
 import ReadingView from "./pages/Communication/CommunicationDetails/ReadingView";
-
+import AttitudePage from "./pages/communication/AttitudePage/AttitudePage";
 
 
 const App = () => {
@@ -41,7 +41,6 @@ const App = () => {
         <Route path="/email-verify" element={<EmailVerify />} />
         <Route path="/reset-password" element={<ResetPassword />} />
 
-        
         
        
        
@@ -69,6 +68,8 @@ const App = () => {
         <Route path="/speakingPage" element={<SpeakingPage />} />
        <Route path="/ListeningPage" element={<ListeningPage />} />
        <Route path="/Readingview" element={<ReadingView />} />
+        <Route path="/attitude-details" element={<AttitudePage />} />
+
 
         <Route path="admin/reading" element={<ReadingCrud token={localStorage.getItem("token")} />} />
        <Route path="admin/softskill" element={<SoftSkillViewer />} />

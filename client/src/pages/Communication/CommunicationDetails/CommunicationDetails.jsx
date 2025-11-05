@@ -30,9 +30,10 @@ const CommunicationDetails = () => {
   };
 
   return (
-    <div className="comm-page">
+    <div className="comm-wrapper">
+    <div className="comm-page1">
       {/* Sidebar */}
-      <div className="sidebar">
+      <div className="sidebar1">
         <div className="logo-section">
          <Link
               to="/"
@@ -94,6 +95,7 @@ const CommunicationDetails = () => {
           {renderContent()}
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import "./VideoGalleryCards.css";
 import Header from "../Header";
-
+import skicaVideo from "../../assets/Skica.mp4";
 const VideoGalleryCards = () => {
   const testimonials = [
     {
@@ -23,6 +23,7 @@ const VideoGalleryCards = () => {
 
   return (
     <>
+    
       {/* 🟦 SECTION 1 — FEATURED VIDEO */}
       <section className="gallery-video py-5" style={{
         background: "linear-gradient(30deg,rgba(12, 0, 107, 1) 0%,rgba(9, 9, 121, 1) 50%,rgba(0, 212, 255, 1) 100%)",
@@ -32,32 +33,37 @@ const VideoGalleryCards = () => {
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 col-md-10">
               <div className="position-relative video-wrapper shadow-lg rounded-4 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="500"
-                  src="https://www.youtube.com/embed/9nv3lyI4F2w"
-                  title="YouTube video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <video
+                width="100%"
+                height="500"
+                controls
+                className="rounded-4"
+              >
+                <source src={skicaVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
 
-                <div className="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 text-light">
-                  <h4 className="fw-bold">Featured Demo Video</h4>
-                  <p>Experience our platform in action with stunning visuals.</p>
-                </div>
+                <div
+  className="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 text-light"
+  style={{ pointerEvents: "none" }}
+>
+  
+  <p>Experience our platform in action with stunning visuals.</p>
+</div>
+
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* 🟩 SECTION 2 — HEADER */}
       <section className="header-section py-3 bg-light">
         <div className="container">
           <Header />
         </div>
       </section>
+
+      
 
       {/* 🟨 SECTION 3 — FEATURE CARDS */}
       <section className="features-section py-5 bg-light" style={{

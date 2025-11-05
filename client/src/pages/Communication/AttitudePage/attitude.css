@@ -1,0 +1,235 @@
+/* ---- Page Background ---- */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(120deg, rgb(12, 0, 107), rgb(9, 9, 121), rgb(0, 212, 255));
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Wrapper Layout */
+.attitude-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.attitude-layout1 {
+  display: flex;
+}
+
+/* ---- Scroll Progress ---- */
+/* ---- Scroll Progress ---- */
+.progress-bar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: #00ffe7;
+  z-index: 9999;
+}
+
+
+/* ---- Wrapper Layout ---- */
+.attitude-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.attitude-layout1 {
+  display: flex;
+}
+
+
+/* ---- Header ---- */
+.header1 {
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  font-size: 26px;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header-right button {
+  margin-left: 10px;
+}
+
+
+/* ---- Sidebar ---- */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  padding: 100px 20px 20px;
+  position: fixed;
+  left: -260px;
+  top: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  color: white;
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---- Overlay (Mobile only) ---- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 14;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+
+/* ---- Main Content ---- */
+.content {
+  padding: 120px 20px 60px;
+  width: 100%;
+  transition: margin-left 0.3s;
+}
+
+
+/* ---- Cards ---- */
+.card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  color: white;
+  transition: 0.3s;
+}
+
+.card-header {
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ---- Video Container ---- */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 12px;
+}
+
+.video-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center;
+  padding: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+  
+}
+
+
+/* ---- RESPONSIVE ---- */
+
+/* Desktop — Sidebar always visible */
+@media (min-width: 769px) {
+  .menu-button {
+    display: none; /* Hide hamburger icon */
+  }
+
+  .sidebar {
+    left: 0 !important; /* Sidebar always visible */
+  }
+
+  .content {
+    margin-left: 260px; /* Push page right */
+  }
+}
+
+/* Mobile — Sidebar toggle */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .sidebar {
+    left: -260px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
